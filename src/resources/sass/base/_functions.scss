@@ -1,0 +1,3 @@
+@function rem-calc($number) {
+    @return $number / 16 + rem;
+}

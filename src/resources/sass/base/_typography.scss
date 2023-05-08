@@ -1,0 +1,48 @@
+@use "./functions" as *;
+@use "./mixins" as *;
+
+// Base font size in pixels
+$base-font-size: rem-calc(20);
+
+// Header Styles
+$h1: (
+    small: (
+        font-size: rem-calc(40),
+        font-weight: 700,
+    ),
+    medium: (
+        font-size: rem-calc(50),
+    ),
+    large: (
+        font-size: rem-calc(60),
+    ),
+);
+$h2: (
+    small: (
+        font-size: rem-calc(32),
+        font-weight: 700,
+    ),
+    medium: (
+        font-size: rem-calc(42),
+    ),
+    large: (
+        font-size: rem-calc(52),
+    ),
+);
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    line-height: 1.1;
+}
+
+h1 {
+    @include map_styles($h1);
+}
+
+h2 {
+    @include map_styles($h2);
+}

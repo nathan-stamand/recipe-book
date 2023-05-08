@@ -1,0 +1,23 @@
+@use "./breakpoints" as *;
+@use "sass:map" as map;
+
+@mixin break($breakpoint) {
+    $break: map.get($breakpoints, $breakpoint);
+    @if $break == null {
+        @error "Invalid breakpoint: #{$breakpoint}.";
+    }
+
+    @media screen and (min-width: ($break + px)) {
+        @content;
+    }
+}
+
+@mixin map_styles($map) {
+    @each $breakpoint, $styles in $map {
+        @include break($breakpoint) {
+            @each $prop, $val in $styles {
+                #{$prop}: $val;
+            }
+        }
+    }
+}

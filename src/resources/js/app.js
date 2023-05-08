@@ -1,1 +1,3 @@
-require('./bootstrap');
+window.addEventListener("DOMContentLoaded", () => {
+    console.log("ayyy");
+});

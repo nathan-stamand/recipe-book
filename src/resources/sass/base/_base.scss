@@ -1,0 +1,10 @@
+@use "./colors" as *;
+@use "./typography" as *;
+@use "./functions" as *;
+
+html {
+    background-color: $white;
+    color: $black;
+    font-family: "Jost", Roboto, Arial, sans-serif;
+    font-size: $base-font-size;
+}
