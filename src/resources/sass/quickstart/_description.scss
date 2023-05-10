@@ -1,0 +1,9 @@
+@use "../base/mixins" as *;
+
+.quickstart__description {
+    display: block;
+
+    @include break(large) {
+        grid-column: 2 / 3;
+    }
+}

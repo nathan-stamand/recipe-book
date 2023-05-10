@@ -1,0 +1,12 @@
+@use "../base/functions" as *;
+@use "../base/mixins" as *;
+
+.quickstart__heading {
+    display: block;
+    font-size: rem-calc(24);
+    font-weight: 700;
+
+    @include break(medium) {
+        font-size: rem-calc(30);
+    }
+}
