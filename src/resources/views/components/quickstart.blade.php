@@ -2,9 +2,9 @@
 $qs = [
     [
         "icon" => file_get_contents('images/kitchen-set.svg'),
-        "link" => "#link",
-        "heading" => "Quick Link",
-        "description" => "This is a short description of the heading.",
+        "link" => "/recipes",
+        "heading" => "Recipes",
+        "description" => "Browse your personal recipes!",
     ],
     [
         "icon" => file_get_contents('images/kitchen-set.svg'),

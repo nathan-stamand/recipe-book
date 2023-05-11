@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Recipe;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +15,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('home', [
+        'recipes' => Recipe::all()
+    ]);
+});
+
+Route::get('/recipes', function () {
+    return view('recipes', [
+        'recipes' => Recipe::all()
+    ]);
 });

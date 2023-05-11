@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use App\Models\Recipe;
 
 class DatabaseSeeder extends Seeder
 {
@@ -11,8 +12,9 @@ class DatabaseSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
-    {
-        // \App\Models\User::factory(10)->create();
-    }
+  public function run()
+  {
+    Recipe::truncate();
+    Recipe::factory(10)->create();
+  }
 }
