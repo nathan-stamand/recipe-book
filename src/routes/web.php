@@ -15,12 +15,11 @@ use App\Models\Recipe;
 */
 
 Route::get('/', function () {
-    return view('home', [
-        'recipes' => Recipe::all()
-    ]);
+    return view('home');
 });
 
 Route::get('/recipes', function () {
+
     return view('recipes', [
         'recipes' => Recipe::all()
     ]);

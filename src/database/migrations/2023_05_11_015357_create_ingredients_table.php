@@ -15,6 +15,7 @@ class CreateIngredientsTable extends Migration
   {
     Schema::create('ingredients', function (Blueprint $table) {
         $table->id();
+        $table->foreignId('recipe_id');
         $table->string('name');
         $table->integer('cost');
         $table->boolean('containsMeat');

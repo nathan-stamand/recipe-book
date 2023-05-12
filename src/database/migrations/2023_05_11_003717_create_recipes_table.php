@@ -16,6 +16,7 @@ class CreateRecipesTable extends Migration
     Schema::create('recipes', function (Blueprint $table) {
         $table->id();
         $table->string('title')->unique();
+        $table->string('imageMain')->unique();
         $table->float('servingsMade');
         $table->boolean('favorite');
         $table->integer('rating');
