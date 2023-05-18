@@ -1,10 +1,61 @@
 @use "./colors" as *;
 @use "./typography" as *;
 @use "./functions" as *;
+@use "./mixins" as *;
+@use "sass:math";
 
 html {
     background-color: $white;
     color: $black;
     font-family: "Jost", Roboto, Arial, sans-serif;
     font-size: $base-font-size;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+
+    > * {
+        flex: 0 0 100%;
+    }
+
+    @include break(med-lar) {
+        &.med-lar-2 {
+            > * {
+                flex: 0 0 calc(50% - math.round(calc(30px * 0.5)));
+            }
+        }
+    }
+
+    @include break(large) {
+        &.large-3 {
+            > * {
+                flex: 0 0 calc(33% - math.round(calc(30px * 0.67)));
+            }
+        }
+    }
+}
+
+.image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+    overflow: hidden;
+
+    img {
+        position: absolute;
+        min-width: 100%;
+        min-height: 100%;
+        max-width: none;
+        max-height: none;
+        object-fit: cover;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
 }

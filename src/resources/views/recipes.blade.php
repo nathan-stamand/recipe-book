@@ -1,12 +1,8 @@
 <x-layouts.base>
-    <h1>Now we're cookin' with <em>grease</em></h1>
-    @foreach ($recipes as $recipe)
-    <h3>{{ $recipe->title }}</h3>
-    <img src="{{ $recipe->imageMain }}" alt="{{ $recipe->title }}" />
-    <ul>
-        @foreach ($recipe->ingredients as $ingredient)
-        <li>{{ $ingredient->name }}</li>
+    <h1 class="h1">Now we're cookin' with <em>grease</em></h1>
+    <section class="container large-3 med-lar-2">
+        @foreach ($recipes as $recipe)
+        <x-recipe-card :recipe="$recipe" />
         @endforeach
-    </ul>
-    @endforeach
+    </section>
 </x-layouts.base>

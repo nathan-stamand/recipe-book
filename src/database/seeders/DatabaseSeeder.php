@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
 
     for ($i = 0; $i < 5; $i++) {
       $recipe = Recipe::factory()->create();
-      Ingredient::factory(5)->create(['recipe_id' => $recipe->id]);
+      Ingredient::factory(rand(5, 25))->create(['recipe_id' => $recipe->id]);
     }
   }
 }

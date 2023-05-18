@@ -1,0 +1,9 @@
+@use "../base/colors" as *;
+@use "../base/functions" as *;
+
+.recipe-card__title {
+    color: inherit;
+    font-size: rem-calc(20);
+    font-weight: 600;
+    margin-bottom: 15px;
+}

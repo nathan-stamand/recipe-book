@@ -1,0 +1,107 @@
+@use "../base/mixins" as *;
+@use "../base/colors" as *;
+@use "../base/style-vars" as *;
+@use "../base/functions" as *;
+
+.recipe-card {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: stretch;
+    background-color: $dk_1;
+    border-radius: $radius;
+    overflow: hidden;
+    color: $lt_1;
+    transition: color $transition, background-color $transition,
+        transform $transition;
+    box-shadow: $shadow;
+
+    &:hover,
+    &:focus {
+        background-color: $dk_2;
+        color: $lt_2;
+        transform: scale(1.03);
+    }
+
+    @include break(medium) {
+        flex-flow: row nowrap;
+    }
+
+    @include break(large) {
+        flex-flow: column nowrap;
+        max-width: 600px;
+    }
+}
+
+.recipe-card__image {
+    flex: 0 0 50%;
+    height: auto;
+    padding: 0;
+    min-height: 250px;
+    position: relative;
+
+    &::before,
+    &::after {
+        display: block;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba($black, 0.8);
+        opacity: 0;
+        transition: opacity $transition;
+    }
+
+    &::after {
+        content: "View Recipe";
+        width: max-content;
+        padding: 10px 20px;
+        border: 1px solid $lt_1;
+        z-index: 2;
+    }
+
+    &::before {
+        content: "";
+        width: 101%;
+        height: 101%;
+        z-index: 1;
+    }
+
+    .recipe-card:hover &,
+    .recipe-card:focus & {
+        &::before,
+        &::after {
+            opacity: 0.8;
+        }
+    }
+
+    @include break(large) {
+        min-height: 300px;
+    }
+}
+
+.recipe-card__content {
+    flex: 1 1 auto;
+    padding: 1rem;
+
+    hr {
+        border: none;
+        border-bottom: 3px solid $dk_2;
+        margin: 1rem 0;
+        width: 40%;
+        transition: border-bottom-color $transition;
+
+        .recipe-card:hover &,
+        .recipe-card:focus & {
+            border-bottom-color: $dk_1;
+        }
+    }
+
+    p {
+        font-style: italic;
+        font-size: rem-calc(14);
+    }
+
+    strong {
+        font-weight: 500;
+    }
+}

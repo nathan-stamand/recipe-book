@@ -1,7 +1,7 @@
 <?php
 $nav = [
     ['Home', '/'],
-    ['Recipes', '/'],
+    ['Recipes', '/recipes'],
     ['Menus', '/'],
     ['Grocery Lists', '/'],
     ['Settings', '/']
