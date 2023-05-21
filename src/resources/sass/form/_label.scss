@@ -1,0 +1,28 @@
+@use "../base/colors" as *;
+@use "../base/style-vars" as *;
+
+.form__label {
+    position: relative;
+    width: 100%;
+    display: flex;
+    background-color: $dk_2;
+    flex-flow: column nowrap;
+    min-height: calc(20px + 1.5rem + 20px);
+    border-radius: $radius;
+    overflow: hidden;
+    padding: 25px 20px 15px;
+
+    span {
+        display: inline-block;
+        position: absolute;
+        display: block;
+        left: 20px;
+        top: 50%;
+        width: 100%;
+        padding: 10px 0;
+        background-color: inherit;
+        transform: translateY(-50%);
+        transition: top $transition, font-size $transition;
+        z-index: 1;
+    }
+}

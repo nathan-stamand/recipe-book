@@ -10,6 +10,11 @@ html {
     color: $white;
     font-family: "Jost", Roboto, Arial, sans-serif;
     font-size: $base-font-size;
+    box-sizing: border-box;
+
+    * {
+        box-sizing: inherit;
+    }
 }
 
 body {

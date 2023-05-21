@@ -1,0 +1,14 @@
+@use "../base/colors" as *;
+@use "../base/style-vars" as *;
+
+.form__label-file-upload {
+    width: fit-content;
+    transition: background-color $transition, color $transition;
+    &:hover,
+    &:focus,
+    &:focus-within {
+        color: $lt_2;
+        background-color: $dk_1;
+        cursor: pointer;
+    }
+}

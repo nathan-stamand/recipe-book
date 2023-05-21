@@ -1,26 +1,25 @@
 <x-layouts.base>
-    <h1 class="h1">Create a Recipe</h1>
 
-    <form action="/recipes" method="POST" class="form">
-        @csrf
-        <div class="form__group">
-            <label for="title" class="form__label">Title</label>
-            <input type="text" name="title" id="title" class="form__input">
-        </div>
-        <div class="form__group">
-            <label for="description" class="form__label">Description</label>
-            <textarea name="description" id="description" class="form__input"></textarea>
-        </div>
-        <div class="form__group">
-            <label for="imageMain" class="form__label">Main Image</label>
-            <input type="text" name="imageMain" id="imageMain" class="form__input">
-        </div>
-        <div class="form__group">
-            <label for="servings" class="form__label">Servings</label>
-            <input type="text" name="servings" id="servings" class="form__input">
-        </div>
-        <div class="form__group">
-            <input type="submit" value="Save" id="prepTime" class="form__input">
-        </div>
-    </form>
+    <section class="container">
+        <h1 class="h1">Start a Recipe...</h1>
+        <form action="/recipes" method="POST" class="form">
+            @csrf
+
+            <x-form.input name="title" label="Title" />
+            <x-form.textarea name="description" label="Description" />
+            <div class="form__group">
+                <label for="imageMain" class="form__label form__label-file-upload">
+                    <span>Upload Main Image</span>
+                    <input type="file" name="imageMain" id="imageMain" class="form__input form__file-upload" tabindex="0">
+                </label>
+            </div>
+            <x-form.input name="servingsMade" label="Servings Made" min='1' type='number' />
+            <x-form.input name="caloriesTotal" label="Calories Total" min='1' type='number' />
+            <div class="form__group">
+                <label for="save" class="form__submit-button"><span>Save</span>
+                    <input type="submit" value="Save" id="save" class="form__submit">
+                </label>
+            </div>
+        </form>
+    </section>
 </x-layouts.base>
