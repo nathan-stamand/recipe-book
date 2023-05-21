@@ -1,4 +1,4 @@
 <x-layouts.base>
-    <h1 class="h1">Welcome to your Recipe Book!</h1>
+    <x-hero heading='Welcome to Your Recipe&nbsp;Book!' text='Create and manage recipes, plan your menus, and more.' />
     <x-quickstart />
 </x-layouts.base>

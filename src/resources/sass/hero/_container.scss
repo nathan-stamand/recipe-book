@@ -1,0 +1,7 @@
+@use "../base/mixins" as *;
+
+.hero__container {
+    @include break(large) {
+        max-width: 800px;
+    }
+}

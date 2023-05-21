@@ -1,0 +1,22 @@
+@use "../base/colors" as *;
+
+.recipe-card__content {
+    flex: 1 1 auto;
+    padding: 1rem;
+
+    hr {
+        .recipe-card:hover &,
+        .recipe-card:focus & {
+            border-bottom-color: $dk_1;
+        }
+    }
+
+    p {
+        font-style: italic;
+        font-size: rem-calc(14);
+    }
+
+    strong {
+        font-weight: 500;
+    }
+}

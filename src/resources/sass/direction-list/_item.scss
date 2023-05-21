@@ -1,0 +1,41 @@
+@use "../base/colors" as *;
+@use "../base/functions" as *;
+@use "../base/mixins" as *;
+
+.direction-list__item {
+    $font-size: 18;
+    $line-height: 1.5;
+    $diameter: $font-size * 2.5;
+    counter-increment: direction-list;
+    position: relative;
+    padding: rem-calc($diameter + 20) 0 0 0;
+    line-height: $line-height;
+
+    &::before {
+        content: counter(direction-list);
+        font-family: "Fugaz One", "Jost", Roboto, Arial, sans-serif;
+        border-radius: 50%;
+        background: $dk_2;
+        position: absolute;
+        text-shadow: 0 0 10px rgba($black, 0.33);
+        left: 0;
+        top: 0;
+        transform: unset;
+        font-size: rem-calc($font-size);
+        font-weight: bold;
+        color: $white;
+        width: rem-calc($diameter);
+        height: rem-calc($diameter);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    @include break(medium) {
+        padding: 0 0 0 rem-calc($diameter + 10);
+        &::before {
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+}

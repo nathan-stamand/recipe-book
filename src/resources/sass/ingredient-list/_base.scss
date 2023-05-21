@@ -1,0 +1,12 @@
+@use "../base/mixins" as *;
+
+.ingredient-list {
+    @include break(medium) {
+        display: grid;
+        gap: 5px 15px;
+        grid-template-columns: repeat(2, auto);
+    }
+    @include break(large) {
+        grid-template-columns: repeat(5, auto);
+    }
+}

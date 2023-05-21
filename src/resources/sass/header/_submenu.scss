@@ -1,0 +1,16 @@
+@use "../base/colors" as *;
+@use "../base/style-vars" as *;
+
+.header__submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+    background-color: $black;
+    border-radius: $radius;
+    padding: 10px;
+    min-width: 100%;
+    width: max-content;
+    box-shadow: $shadow;
+}

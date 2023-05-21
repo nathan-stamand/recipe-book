@@ -1,20 +1,44 @@
 @use "./colors" as *;
 @use "./typography" as *;
+@use "./style-vars" as *;
 @use "./functions" as *;
 @use "./mixins" as *;
 @use "sass:math";
 
 html {
-    background-color: $white;
-    color: $black;
+    background-color: $black;
+    color: $white;
     font-family: "Jost", Roboto, Arial, sans-serif;
     font-size: $base-font-size;
+}
+
+body {
+    background-color: $black;
+}
+
+section {
+    padding: 40px 20px;
+
+    + section {
+        padding-top: 0;
+    }
+
+    @include break(large) {
+        padding: 80px 30px;
+    }
+}
+
+hr {
+    border: none;
+    border-bottom: 3px solid $dk_2;
+    margin: 1rem 0;
+    width: 40%;
+    transition: border-bottom-color $transition;
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
     display: flex;
     flex-wrap: wrap;
     gap: 30px;

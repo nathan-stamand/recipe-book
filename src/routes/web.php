@@ -19,8 +19,19 @@ Route::get('/', function () {
 });
 
 Route::get('/recipes', function () {
-
-    return view('recipes', [
+    return view('recipe.index', [
         'recipes' => Recipe::all()
+    ]);
+});
+
+Route::get('/recipes/new', function () {
+    return view('recipe.create', [
+        'recipes' => Recipe::all()
+    ]);
+});
+
+Route::get('/recipes/{slug}', function (String $slug) {
+    return view('recipe.show', [
+        'recipe' => Recipe::where('slug', $slug)->firstOrFail()
     ]);
 });

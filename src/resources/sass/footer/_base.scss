@@ -1,11 +1,9 @@
 @use "../base/colors" as *;
 
-.header {
-    color: $white;
-    padding: 15px;
+.page-footer {
+    color: rgba($white, 0.5);
 
     a {
-        display: block;
         &:hover,
         &:focus {
             color: $lt_1;

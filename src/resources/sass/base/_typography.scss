@@ -31,14 +31,14 @@ $h2: (
 );
 $h3: (
     small: (
-        font-size: rem-calc(26),
+        font-size: rem-calc(22),
         font-weight: 700,
     ),
     medium: (
-        font-size: rem-calc(36),
+        font-size: rem-calc(25),
     ),
     large: (
-        font-size: rem-calc(46),
+        font-size: rem-calc(28),
     ),
 );
 
@@ -49,6 +49,7 @@ h4,
 h5,
 h6 {
     line-height: 1.1;
+    font-family: "Fugaz One", "Jost", Roboto, Arial, sans-serif;
 }
 
 .h1 {
@@ -60,5 +61,5 @@ h6 {
 }
 
 .h3 {
-    @include map_styles($h2);
+    @include map_styles($h3);
 }
