@@ -4,14 +4,16 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Recipe;
+use App\Models\Direction;
 
 class Ingredient extends Model
 {
   use HasFactory;
 
-  public function recipe(): BelongsTo
+    protected $guarded = [];
+
+  public function recipe()
   {
-    return $this->belongsTo(Recipe::class);
+    return $this->belongsToMany(Direction::class);
   }
 }

@@ -15,6 +15,8 @@ class IngredientFactory extends Factory
   {
     return [
           'name' => $this->faker->word(),
+          'quantity' => $this->faker->numberBetween(1, 10),
+          'unit' => $this->faker->word(),
           'cost' => $this->faker->numberBetween(25, 15000),
           'containsMeat' => $this->faker->boolean(),
           'containsAnimalProduct' => $this->faker->boolean()
