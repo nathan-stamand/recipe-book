@@ -1,0 +1,17 @@
+@use "../base/colors" as *;
+
+.rating {
+    display: flex;
+    justify-content: flex-end;
+    gap: 5px;
+    margin-top: auto;
+
+    svg {
+        width: 20px;
+        height: auto;
+
+        path {
+            fill: lighten($dk_1, 15%);
+        }
+    }
+}

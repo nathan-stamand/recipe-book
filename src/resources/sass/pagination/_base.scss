@@ -1,0 +1,31 @@
+@use "../base/colors" as *;
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    list-style: none;
+    padding: 0;
+    li {
+        margin: 0 0.5rem;
+        a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            background-color: $lt_1;
+            color: $dk_1;
+            text-decoration: none;
+            &:hover {
+                background-color: $lt_2;
+            }
+            &.active {
+                background-color: $lt_2;
+            }
+        }
+    }
+}

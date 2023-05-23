@@ -7,5 +7,15 @@
         <hr />
         <p><strong>Serves: </strong>{{ $recipe->servingsMade }}</p>
         <p><strong>Calories Per Serving: </strong>{{ $recipe->caloriesPerServing }}</p>
+        <ul>
+            @foreach ($recipe->tags as $tag)
+            <li>{{ $tag->name }}</li>
+            @endforeach
+        </ul>
+        <div class="rating">
+            @for ($i = 0; $i < $recipe->rating; $i++)
+            <?=  file_get_contents('images/star.svg') ?>
+            @endfor
+        </div>
     </div>
 </a>

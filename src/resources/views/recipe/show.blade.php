@@ -6,6 +6,16 @@
             <img src="{{ $recipe->imageMain }}" alt="{{ $recipe->title }}" class="recipe-hero__image">
         </div>
     </section>
+    <section class="container">
+        <div class="recipe-tags">
+            @foreach ($recipe->tags as $tag)
+            <a href="/recipes?tag={{ $tag->slug }}" class="recipe-tags__link">{{ $tag->name }}</a>
+            @endforeach
+        </div>
+    </section>
+    <section class="container">
+        {!! $recipe->description !!}
+    </section>
     <section class='container'>
         <h2 class="h3">Ingredients</h2>
         <ul class="ingredient-list">

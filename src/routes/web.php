@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RecipeController;
 use App\Models\Recipe;
 
 /*
@@ -18,20 +19,7 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/recipes', function () {
-    return view('recipe.index', [
-        'recipes' => Recipe::all()
-    ]);
-});
-
-Route::get('/recipes/new', function () {
-    return view('recipe.create', [
-        'recipes' => Recipe::all()
-    ]);
-});
-
-Route::get('/recipes/{slug}', function (String $slug) {
-    return view('recipe.show', [
-        'recipe' => Recipe::where('slug', $slug)->firstOrFail()
-    ]);
-});
+Route::get('/recipes', RecipeController::class . '@index');
+Route::get('/recipes/new', RecipeController::class . '@create');
+Route::post('/recipes', RecipeController::class . '@store');
+Route::get('/recipes/{slug}', RecipeController::class . '@show');

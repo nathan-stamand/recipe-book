@@ -2,9 +2,13 @@
 
 .recipe-card__content {
     flex: 1 1 auto;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 10px;
     padding: 1rem;
 
     hr {
+        margin: 5px 0;
         .recipe-card:hover &,
         .recipe-card:focus & {
             border-bottom-color: $dk_1;

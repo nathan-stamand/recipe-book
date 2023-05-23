@@ -2,7 +2,6 @@
 @use "../base/style-vars" as *;
 
 .form__label-file-upload {
-    width: fit-content;
     transition: background-color $transition, color $transition;
     &:hover,
     &:focus,

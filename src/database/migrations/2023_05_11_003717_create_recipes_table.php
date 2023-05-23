@@ -17,7 +17,7 @@ class CreateRecipesTable extends Migration
         $table->id();
         $table->string('title')->unique();
         $table->string('slug')->unique();
-        $table->text('description');
+        $table->text('description')->nullable();
         $table->string('imageMain');
         $table->integer('servingsMade');
         $table->boolean('favorite');
