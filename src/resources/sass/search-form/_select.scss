@@ -1,0 +1,26 @@
+@use "../base/colors" as *;
+@use "../base/style-vars" as *;
+
+.search-form__select {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: $radius;
+    background-color: $lt_2;
+    color: $dk_1;
+    padding: 10px 25px;
+    font-weight: 500;
+    transition: background-color $transition;
+    cursor: pointer;
+    text-transform: uppercase;
+
+    &:hover,
+    &:focus {
+        background-color: darken($lt_2, 15%);
+    }
+
+    > :first-child {
+        pointer-events: none;
+    }
+}

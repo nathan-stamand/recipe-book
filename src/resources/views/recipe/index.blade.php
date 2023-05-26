@@ -8,11 +8,24 @@
 
             <x-form.input className='search-form__search' name="search" label="Search for a recipe" />
             <div class="search-form__select" name="tag" id="tag">
-                @foreach ($tags as $tag)
-                <div class="search-form__select-option">
-                    <a href='?tag={{ $tag->slug }}'>{{ $tag->name }}</a>
+                <div class="search-form__select-option select-option_current">
+                    {{ $filteredTag->name ?? 'Filter by Tag' }}
                 </div>
-                @endforeach
+                <ul class="search-form__select-options">
+                    @if (request('tag'))
+                    <li class="search-form__select-option">
+                        <a href='/recipes'>All</a>
+                    </li>
+                    @endif
+
+                    @foreach ($tags as $tag)
+                    @if (request('tag') != $tag->slug)
+                    <li class="search-form__select-option">
+                        <a href='?tag={{ $tag->slug }}'>{{ $tag->name }}</a>
+                    </li>
+                    @endif
+                    @endforeach
+                </ul>
             </div>
             <x-form.submit name="search">Search</x-form.submit>
         </form>

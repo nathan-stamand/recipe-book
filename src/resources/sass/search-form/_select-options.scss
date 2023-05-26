@@ -1,0 +1,38 @@
+@use "../base/style-vars" as *;
+@use "../base/colors" as *;
+
+.search-form__select-options {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    z-index: 10;
+    border-radius: $radius;
+    overflow: hidden;
+    width: auto;
+    height: auto;
+    max-height: 0px;
+    transition: max-height $transition 0.3s;
+    background-color: $lt_1;
+    color: $dk_1;
+
+    &.active {
+        max-height: 10rem;
+        overflow: scroll;
+    }
+
+    li a {
+        display: block;
+        padding: 15px 20px;
+        white-space: nowrap;
+    }
+}
+
+.search-form__select-option {
+    transition: background-color $transition;
+
+    &:hover,
+    &:focus,
+    &:focus-within {
+        background-color: darken($lt_2, 15%);
+    }
+}

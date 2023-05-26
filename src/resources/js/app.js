@@ -1,4 +1,9 @@
 window.addEventListener("DOMContentLoaded", () => {
+    initInputs();
+    initFilterSelects();
+});
+
+function initInputs() {
     const inputs = document.querySelectorAll("input, textarea");
     if (inputs.length) {
         Array.from(inputs).forEach((el) => {
@@ -17,4 +22,17 @@ window.addEventListener("DOMContentLoaded", () => {
             });
         });
     }
-});
+}
+
+function initFilterSelects() {
+    const selects = document.querySelectorAll(".search-form__select");
+    if (selects.length) {
+        Array.from(selects).forEach((el) => {
+            el.addEventListener("click", (e) => {
+                e.target
+                    .querySelector(".search-form__select-options")
+                    .classList.toggle("active");
+            });
+        });
+    }
+}

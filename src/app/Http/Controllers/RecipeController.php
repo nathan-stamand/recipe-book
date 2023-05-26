@@ -13,9 +13,11 @@ class RecipeController extends Controller
 {
   public function index(): View
   {
+    $filteredTag = Tag::where('slug', request('tag'));
     return view('recipe.index', [
         'recipes' => Recipe::latest()->filter(request(['search', 'tag']))->paginate(6)->withQueryString(),
-        'tags' => Tag::all()->sortBy('name')
+        'tags' => Tag::all()->sortBy('name'),
+        'filteredTag' => $filteredTag->exists() ? $filteredTag->first() : null,
       ]);
   }
 
