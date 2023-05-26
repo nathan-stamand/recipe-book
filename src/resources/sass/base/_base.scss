@@ -63,7 +63,7 @@ hr {
     @include break(med-lar) {
         &.med-lar-2 {
             > * {
-                flex: 0 1 calc(50% - math.round(calc(30px * 0.5)));
+                flex: 0 1 calc(50% - calc(30px * 0.5));
             }
         }
     }
@@ -71,7 +71,7 @@ hr {
     @include break(large) {
         &.large-3 {
             > * {
-                flex: 0 1 calc(33% - math.round(calc(30px * 0.67)));
+                flex: 0 1 calc(33.33% - calc(30px * 0.67));
             }
         }
     }

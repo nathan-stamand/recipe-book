@@ -1,3 +1,5 @@
+@use "../base/mixins" as *;
+
 .search-form {
     display: flex;
     flex-wrap: wrap;
@@ -5,8 +7,12 @@
     gap: 30px;
 
     > .form__group {
-        flex: 0 0 auto;
+        flex: 1 1 auto;
         margin: 0;
+    }
+
+    > div:first-of-type {
+        flex: 0 0 100%;
     }
 
     .form__submit-button {
@@ -15,5 +21,14 @@
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+
+    @include break(large) {
+        > .form__group {
+            flex: 0 0 auto;
+        }
+        > div:first-of-type {
+            flex: 1 1 auto;
+        }
     }
 }

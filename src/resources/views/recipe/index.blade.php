@@ -6,7 +6,7 @@
             <input type="hidden" name="tag" value="{{ request('tag') }}">
             @endif
 
-            <x-form.input className='search-form__search' name="search" label="Search for a recipe" />
+            <x-form.input className='search-form__search' name="search-input" label="Search for a recipe" />
             <div class="search-form__select" name="tag" id="tag">
                 <div class="search-form__select-option select-option_current">
                     {{ $filteredTag->name ?? 'Filter by Tag' }}

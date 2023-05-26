@@ -18,10 +18,10 @@ class CreateRecipesTable extends Migration
         $table->string('title')->unique();
         $table->string('slug')->unique();
         $table->text('description')->nullable();
-        $table->string('imageMain');
+        $table->string('imageMain')->nullable();
         $table->integer('servingsMade');
-        $table->boolean('favorite');
-        $table->integer('rating');
+        $table->boolean('favorite')->default(false);
+        $table->integer('rating')->nullable();
         $table->integer('caloriesPerServing');
         $table->integer('caloriesTotal');
         $table->timestamps();

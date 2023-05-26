@@ -10,7 +10,8 @@
     padding: 0;
     li {
         margin: 0 0.5rem;
-        a {
+        a,
+        span {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -23,9 +24,18 @@
             &:hover {
                 background-color: $lt_2;
             }
-            &.active {
-                background-color: $lt_2;
+        }
+
+        &.active {
+            a,
+            span {
+                background-color: $black;
+                color: $white;
             }
+        }
+
+        &.disabled {
+            visibility: hidden;
         }
     }
 }
